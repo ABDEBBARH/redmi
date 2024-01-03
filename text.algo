@@ -1,0 +1,32 @@
+Algorithm: DotProductAndOrthogonalityCheck
+
+Procedure: dot_product(v1, v2)
+Input:
+  v1: Array representing vector 1
+  v2: Array representing vector 2
+
+Variables:
+  ps <- 0
+
+For i from 0 to size of v1 - 1:
+  ps <- ps + (v1[i] * v2[i])
+
+End Procedure
+
+Algorithm: CheckOrthogonalityForNVectors
+
+Input:
+  n: Number of vector pairs
+  vectors: Array of vectors (each vector represented as an array)
+
+For i from 0 to n - 1:
+  For j from i+1 to n - 1:
+    Call dot_product(vectors[i], vectors[j]) and store the result in ps
+
+    If ps is zero:
+      Print "Vectors", i+1, "and", j+1, "are orthogonal"
+    Else:
+      Print "Vectors", i+1, "and", j+1, "are not orthogonal"
+
+Output:
+  Result of orthogonal check for all vector pairs
